@@ -14,6 +14,11 @@ Import the following Header files
 #import "DataModels.h"
 ```
 
+If you are using the example project, be sure to set your API key in the View Controller, this is not mandatory and if you choose not to use an API key, simply pass nil to the fetch command later on
+```Objective-C
+static NSString *API_KEY = @"YOUR_API_KEY_HERE";
+```
+
 Create a Reference to a JFWeatherManager object and call the fetch function
 ```Objective-C
 JFWeatherManager *weatherManager = [[JFWeatherManager alloc]init];
