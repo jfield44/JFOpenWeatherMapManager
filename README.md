@@ -26,6 +26,7 @@ JFWeatherManager *weatherManager = [[JFWeatherManager alloc]init];
 [weatherManager fetchWeatherDataForLatitude:toAdd.coordinate.latitude andLongitude:toAdd.coordinate.longitude withAPIKeyOrNil:API_KEY :^(JFWeatherData *returnedWeatherData){
         NSLog(@"Latitude %.3f",[returnedWeatherData latitudeCoordinateOfRequest]);
         NSLog(@"Longitude %.3f",[returnedWeatherData longitudeCoordinateOfRequest]);
+        NSLog(@"Country %@",[returnedWeatherData countryCode]);
         NSLog(@"Conditions are %@",[returnedWeatherData currentConditionsTextualDescription]);
         NSLog(@"Temperature is %f",[returnedWeatherData temperatureInUnitFormat:kTemperatureCelcius]);
         NSLog(@"Sunrise is %@",[returnedWeatherData sunriseTime]);
@@ -45,8 +46,8 @@ The data and format's that can be returned by the API are:
 - (NSString *)currentConditionsTextualDescription; //e.g Broken Clouds
 - (double)temperatureInUnitFormat:(TemperatureUnit)temperatureUnit; //e.g 3.0°C , Temperature Available in Kelvin, Celsius and Fahrenheit
 - (double)pressureInUnitFormat:(PressureUnit)pressureUnit; //e.g 1007.0 hPA , Pressure Available in Hectopascal, and Pascal
-- (NSString *)sunriseTime; //e.g 06:33
-- (NSString *)sunsetTime; //e.g 19:32
+- (NSString *)sunriseTime; //e.g 06:33 (Time Shown is Localised based on Latitude and Longitude of the request)
+- (NSString *)sunsetTime; //e.g 19:32 (Time Shown is Localised based on Latitude and Longitude of the request)
 - (NSString *)dayLightHours; //e.g 12:15
 - (NSString *)humidityPercentage; //e.g 88%
 - (NSString *)cloudCovergePercentage; //e.g 32%
@@ -57,6 +58,7 @@ The data and format's that can be returned by the API are:
 - (double)snowFallVolumeOver3HoursInMillimeters; //e.g 7mm
 - (double)latitudeCoordinateOfRequest; //e.g 32.79
 - (double)longitudeCoordinateOfRequest; //e.g -96.0
+- (NSString *)countryCode; // E.g. GB / US / DE
 ```
 
 Temperature Formats (Kelvin, Celcius, Farenheit)
@@ -80,6 +82,7 @@ Attribution (Special Thanks)
 
 OpenWeatherMap API http://openweathermap.org for their great API!
 AFNetworking for making the best network library on iOS and Mac OSX (Bundled with this project) http://afnetworking.com
+APTimeZones for providing a great library for localizing the time zones based on latitude and longitude (Bundled with this project) https://github.com/Alterplay/APTimeZones
 
 =======================
 
