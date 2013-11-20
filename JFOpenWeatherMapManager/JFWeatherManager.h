@@ -4,7 +4,8 @@
 //
 //  Created by Jonathan Field on 27/10/2013.
 //  Copyright (c) 2013 Jonathan Field. All rights reserved.
-//
+//  http://jonathanfield.me
+//  https://github.com/jfield44/JFOpenWeatherMapManager
 
 #import <Foundation/Foundation.h>
 #import "JFWeatherData.h"
@@ -24,6 +25,5 @@
  */
 - (void)fetchWeatherDataForLatitude:(double)latitude andLongitude:(double)longitude withAPIKeyOrNil:(NSString *)apiKey :(void(^)(JFWeatherData *returnedWeatherData))completionBlock;
 
-@property (nonatomic, weak) NSString *apiKey;
 
 @end

@@ -258,48 +258,47 @@ NSMutableArray *tempArrayForWeather = [NSMutableArray array];
 
 - (NSString *)sunriseTime{
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    [calendar setTimeZone: [NSTimeZone systemTimeZone]];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:self.latitudeCoordinateOfRequest longitude:self.longitudeCoordinateOfRequest];
     
-    NSTimeInterval interval = (double)self.sys.sunrise;
-    NSDate *date = [NSDate date];
-    date = [NSDate dateWithTimeIntervalSinceNow:interval];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[calendar timeZone]];
-    [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    NSString *sunriseDateTime = [dateFormatter stringFromDate:date];
+    NSTimeInterval rawSunrise = (double)self.sys.sunrise;
+    NSDate *sunriseUtcTimeStamp = [NSDate date];
+    sunriseUtcTimeStamp = [NSDate dateWithTimeIntervalSince1970:rawSunrise];
+
+    NSDateFormatter *localTimeZoneFormatter = [NSDateFormatter new];
+    localTimeZoneFormatter.timeZone = location.timeZone;
+    localTimeZoneFormatter.dateFormat = @"HH:mm";
+    NSString *localSunriseTime = [localTimeZoneFormatter stringFromDate:sunriseUtcTimeStamp];
     
-    return sunriseDateTime;
+    return localSunriseTime;
     
 }
 
 - (NSString *)sunsetTime{
     
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    [calendar setTimeZone: [NSTimeZone systemTimeZone]];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:self.latitudeCoordinateOfRequest longitude:self.longitudeCoordinateOfRequest];
     
-    NSTimeInterval interval = self.sys.sunset;
-    NSDate *date = [NSDate date];
-    date = [NSDate dateWithTimeIntervalSinceNow:interval];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    NSString *sunsetDateTime = [dateFormatter stringFromDate:date];
+    NSTimeInterval rawSunset = (double)self.sys.sunset;
+    NSDate *sunsetUtcTimeStamp = [NSDate date];
+    sunsetUtcTimeStamp = [NSDate dateWithTimeIntervalSince1970:rawSunset];
     
-    return sunsetDateTime;
+    NSDateFormatter *localTimeZoneFormatter = [NSDateFormatter new];
+    localTimeZoneFormatter.timeZone = location.timeZone;
+    localTimeZoneFormatter.dateFormat = @"HH:mm";
+    NSString *localSunsetTime = [localTimeZoneFormatter stringFromDate:sunsetUtcTimeStamp];
+    
+    return localSunsetTime;
     
 }
 
 - (NSString *)dayLightHours{
     
-    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     NSDate *sunrise = [dateFormatter dateFromString:[self sunriseTime]];
     NSDate *sunset = [dateFormatter dateFromString:[self sunsetTime]];
     NSTimeInterval interval = [sunset timeIntervalSinceDate:sunrise];
     NSInteger hours = (NSInteger)interval / 3600;
-    NSInteger minutes = (interval - (hours*3600)) / 60;
+    NSInteger minutes = (interval - (hours * 3600)) / 60;
     NSString *timeDiff = [NSString stringWithFormat:@"%ld:%02ld", (long)hours, (long)minutes];
     
     return timeDiff;
@@ -372,6 +371,12 @@ NSMutableArray *tempArrayForWeather = [NSMutableArray array];
 - (double)longitudeCoordinateOfRequest{
     
     return self.coord.lon ? self.coord.lon : 0.0;
+    
+}
+
+- (NSString *)countryCode{
+    
+    return self.sys.country ? self.sys.country : @"N/A";
     
 }
 

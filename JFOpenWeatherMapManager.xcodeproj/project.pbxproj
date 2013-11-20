@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB5776E7183D3081000E136A /* JFWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5776E4183D3081000E136A /* JFWeatherManager.m */; };
+		AB5776E8183D3081000E136A /* JFWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5776E6183D3081000E136A /* JFWeatherData.m */; };
+		AB5776F3183D30A1000E136A /* APTimeZones.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5776EC183D30A1000E136A /* APTimeZones.m */; };
+		AB5776F4183D30A1000E136A /* CLLocation+APTimeZones.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5776EF183D30A1000E136A /* CLLocation+APTimeZones.m */; };
+		AB5776F5183D30A1000E136A /* CLPlacemark+APTimeZones.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5776F1183D30A1000E136A /* CLPlacemark+APTimeZones.m */; };
+		AB5776F6183D30A1000E136A /* timezonesDB.json in Resources */ = {isa = PBXBuildFile; fileRef = AB5776F2183D30A1000E136A /* timezonesDB.json */; };
 		ABF49F3F18228ED400A56D22 /* Snow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF49F3E18228ED400A56D22 /* Snow.m */; };
 		FC4BD1B6181E9CDA00A1F38F /* Rain.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4BD1B5181E9CDA00A1F38F /* Rain.m */; };
 		FC52C124181D6F080057F940 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC52C123181D6F080057F940 /* Foundation.framework */; };
@@ -25,8 +31,6 @@
 		FC52C14F181D6F080057F940 /* JFOpenWeatherMapManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52C14E181D6F080057F940 /* JFOpenWeatherMapManagerTests.m */; };
 		FC52C159181D70B00057F940 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC52C158181D70B00057F940 /* MapKit.framework */; };
 		FC52C15B181D70B70057F940 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC52C15A181D70B70057F940 /* CoreLocation.framework */; };
-		FC52C15E181D731D0057F940 /* JFWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52C15D181D731D0057F940 /* JFWeatherManager.m */; };
-		FC52C17A181D7B190057F940 /* JFWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52C171181D7B190057F940 /* JFWeatherData.m */; };
 		FC52C190181D92A60057F940 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52C17E181D92A60057F940 /* AFHTTPRequestOperation.m */; };
 		FC52C191181D92A60057F940 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52C180181D92A60057F940 /* AFHTTPRequestOperationManager.m */; };
 		FC52C192181D92A60057F940 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC52C182181D92A60057F940 /* AFHTTPSessionManager.m */; };
@@ -55,6 +59,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB5776E3183D3081000E136A /* JFWeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFWeatherManager.h; sourceTree = "<group>"; };
+		AB5776E4183D3081000E136A /* JFWeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFWeatherManager.m; sourceTree = "<group>"; };
+		AB5776E5183D3081000E136A /* JFWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFWeatherData.h; sourceTree = "<group>"; };
+		AB5776E6183D3081000E136A /* JFWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFWeatherData.m; sourceTree = "<group>"; };
+		AB5776EB183D30A1000E136A /* APTimeZones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTimeZones.h; sourceTree = "<group>"; };
+		AB5776EC183D30A1000E136A /* APTimeZones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APTimeZones.m; sourceTree = "<group>"; };
+		AB5776EE183D30A1000E136A /* CLLocation+APTimeZones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+APTimeZones.h"; sourceTree = "<group>"; };
+		AB5776EF183D30A1000E136A /* CLLocation+APTimeZones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+APTimeZones.m"; sourceTree = "<group>"; };
+		AB5776F0183D30A1000E136A /* CLPlacemark+APTimeZones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLPlacemark+APTimeZones.h"; sourceTree = "<group>"; };
+		AB5776F1183D30A1000E136A /* CLPlacemark+APTimeZones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLPlacemark+APTimeZones.m"; sourceTree = "<group>"; };
+		AB5776F2183D30A1000E136A /* timezonesDB.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timezonesDB.json; sourceTree = "<group>"; };
 		ABF49F3D18228ED400A56D22 /* Snow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snow.h; sourceTree = "<group>"; };
 		ABF49F3E18228ED400A56D22 /* Snow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snow.m; sourceTree = "<group>"; };
 		FC4BD1B4181E9CDA00A1F38F /* Rain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rain.h; sourceTree = "<group>"; };
@@ -80,10 +95,6 @@
 		FC52C14E181D6F080057F940 /* JFOpenWeatherMapManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFOpenWeatherMapManagerTests.m; sourceTree = "<group>"; };
 		FC52C158181D70B00057F940 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FC52C15A181D70B70057F940 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		FC52C15C181D731D0057F940 /* JFWeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFWeatherManager.h; sourceTree = "<group>"; };
-		FC52C15D181D731D0057F940 /* JFWeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFWeatherManager.m; sourceTree = "<group>"; };
-		FC52C170181D7B190057F940 /* JFWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFWeatherData.h; path = WeatherModel/JFWeatherData.h; sourceTree = "<group>"; };
-		FC52C171181D7B190057F940 /* JFWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFWeatherData.m; path = WeatherModel/JFWeatherData.m; sourceTree = "<group>"; };
 		FC52C17D181D92A60057F940 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		FC52C17E181D92A60057F940 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		FC52C17F181D92A60057F940 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -147,13 +158,45 @@
 		AB51F00A1824556100D2EB86 /* JFOpenWeatherMapManager */ = {
 			isa = PBXGroup;
 			children = (
-				FC52C15C181D731D0057F940 /* JFWeatherManager.h */,
-				FC52C15D181D731D0057F940 /* JFWeatherManager.m */,
-				FC52C170181D7B190057F940 /* JFWeatherData.h */,
-				FC52C171181D7B190057F940 /* JFWeatherData.m */,
+				AB5776E9183D3090000E136A /* MIT Licensed Required Libraries (Thanks!) */,
 				FC52C162181D7B190057F940 /* WeatherModel */,
+				AB5776E3183D3081000E136A /* JFWeatherManager.h */,
+				AB5776E4183D3081000E136A /* JFWeatherManager.m */,
+				AB5776E5183D3081000E136A /* JFWeatherData.h */,
+				AB5776E6183D3081000E136A /* JFWeatherData.m */,
 			);
 			name = JFOpenWeatherMapManager;
+			sourceTree = "<group>";
+		};
+		AB5776E9183D3090000E136A /* MIT Licensed Required Libraries (Thanks!) */ = {
+			isa = PBXGroup;
+			children = (
+				FC52C17C181D92A60057F940 /* AFNetworking */,
+				AB5776EA183D30A1000E136A /* APTimeZones */,
+			);
+			name = "MIT Licensed Required Libraries (Thanks!)";
+			sourceTree = "<group>";
+		};
+		AB5776EA183D30A1000E136A /* APTimeZones */ = {
+			isa = PBXGroup;
+			children = (
+				AB5776EB183D30A1000E136A /* APTimeZones.h */,
+				AB5776EC183D30A1000E136A /* APTimeZones.m */,
+				AB5776ED183D30A1000E136A /* Categories */,
+				AB5776F2183D30A1000E136A /* timezonesDB.json */,
+			);
+			path = APTimeZones;
+			sourceTree = "<group>";
+		};
+		AB5776ED183D30A1000E136A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AB5776EE183D30A1000E136A /* CLLocation+APTimeZones.h */,
+				AB5776EF183D30A1000E136A /* CLLocation+APTimeZones.m */,
+				AB5776F0183D30A1000E136A /* CLPlacemark+APTimeZones.h */,
+				AB5776F1183D30A1000E136A /* CLPlacemark+APTimeZones.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		FC52C117181D6F080057F940 = {
@@ -192,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				AB51F00A1824556100D2EB86 /* JFOpenWeatherMapManager */,
-				FC52C17C181D92A60057F940 /* AFNetworking */,
 				FC52C132181D6F080057F940 /* JFAppDelegate.h */,
 				FC52C133181D6F080057F940 /* JFAppDelegate.m */,
 				FC52C135181D6F080057F940 /* Main.storyboard */,
@@ -360,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5776F6183D30A1000E136A /* timezonesDB.json in Resources */,
 				FC52C13C181D6F080057F940 /* Images.xcassets in Resources */,
 				FC52C12E181D6F080057F940 /* InfoPlist.strings in Resources */,
 				FC52C137181D6F080057F940 /* Main.storyboard in Resources */,
@@ -381,15 +424,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC52C17A181D7B190057F940 /* JFWeatherData.m in Sources */,
 				FC52C191181D92A60057F940 /* AFHTTPRequestOperationManager.m in Sources */,
 				FC52C1AA181D96260057F940 /* Weather.m in Sources */,
 				FC4BD1B6181E9CDA00A1F38F /* Rain.m in Sources */,
 				FC52C195181D92A60057F940 /* AFURLConnectionOperation.m in Sources */,
 				FC52C1A9181D96260057F940 /* Sys.m in Sources */,
-				FC52C15E181D731D0057F940 /* JFWeatherManager.m in Sources */,
 				FC52C196181D92A60057F940 /* AFURLRequestSerialization.m in Sources */,
+				AB5776F5183D30A1000E136A /* CLPlacemark+APTimeZones.m in Sources */,
 				FC52C192181D92A60057F940 /* AFHTTPSessionManager.m in Sources */,
+				AB5776F3183D30A1000E136A /* APTimeZones.m in Sources */,
 				FC52C190181D92A60057F940 /* AFHTTPRequestOperation.m in Sources */,
 				FC52C1A8181D96260057F940 /* Main.m in Sources */,
 				FC52C194181D92A60057F940 /* AFSecurityPolicy.m in Sources */,
@@ -402,6 +445,9 @@
 				ABF49F3F18228ED400A56D22 /* Snow.m in Sources */,
 				FC52C13A181D6F080057F940 /* JFViewController.m in Sources */,
 				FC52C197181D92A60057F940 /* AFURLResponseSerialization.m in Sources */,
+				AB5776E7183D3081000E136A /* JFWeatherManager.m in Sources */,
+				AB5776F4183D30A1000E136A /* CLLocation+APTimeZones.m in Sources */,
+				AB5776E8183D3081000E136A /* JFWeatherData.m in Sources */,
 				FC52C130181D6F080057F940 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
