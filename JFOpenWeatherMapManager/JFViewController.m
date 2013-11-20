@@ -54,7 +54,7 @@ static NSString *API_KEY = @"YOUR_API_KEY_HERE";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 14;
+    return 15;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,15 +70,15 @@ static NSString *API_KEY = @"YOUR_API_KEY_HERE";
         case 1:
             [cell.textLabel setText:@"Longitude"];
             break;
-
+            
         case 2:
             [cell.textLabel setText:@"Conditions"];
             break;
-
+            
         case 3:
             [cell.textLabel setText:@"Temperature (°C)"];
             break;
-
+            
         case 4:
             [cell.textLabel setText:@"Sunrise"];
             break;
@@ -118,6 +118,10 @@ static NSString *API_KEY = @"YOUR_API_KEY_HERE";
         case 13:
             [cell.textLabel setText:@"Snow"];
             break;
+            
+        case 14:
+            [cell.textLabel setText:@"Country"];
+            break;
     }
     
     [cell.detailTextLabel setText:[tableViewContents objectAtIndex:[indexPath row]]];
@@ -149,13 +153,13 @@ static NSString *API_KEY = @"YOUR_API_KEY_HERE";
     
     toAdd.coordinate = touchMapCoordinate;
     toAdd.title = @"Dropped Pin";
-    //[weatherManager fetchWeatherDataForLatitude:toAdd.coordinate.latitude andLongitude:toAdd.coordinate.longitude withAPIKeyOrNil:API_KEY]; //Set your API Key at the top of this class, if you do not want to use an API key pass in nil
+    
+    //Set your API Key at the top of this class, if you do not want to use an API key pass in nil
     [weatherManager fetchWeatherDataForLatitude:toAdd.coordinate.latitude andLongitude:toAdd.coordinate.longitude withAPIKeyOrNil:API_KEY :^(JFWeatherData *returnedWeatherData) {
-        
-        NSLog(@"Completion Block :)");
         
         NSLog(@"Latitude %.3f",[returnedWeatherData latitudeCoordinateOfRequest]);
         NSLog(@"Longitude %.3f",[returnedWeatherData longitudeCoordinateOfRequest]);
+        NSLog(@"Country %@",[returnedWeatherData countryCode]);
         NSLog(@"Conditions are %@",[returnedWeatherData currentConditionsTextualDescription]);
         NSLog(@"Temperature is %f",[returnedWeatherData temperatureInUnitFormat:kTemperatureCelcius]);
         NSLog(@"Sunrise is %@",[returnedWeatherData sunriseTime]);
@@ -184,6 +188,7 @@ static NSString *API_KEY = @"YOUR_API_KEY_HERE";
         [tableViewContents addObject:[returnedWeatherData cloudCovergePercentage]];
         [tableViewContents addObject:[NSString stringWithFormat:@"%.1fmm",[returnedWeatherData rainFallVolumeOver3HoursInMillimeters]]];
         [tableViewContents addObject:[NSString stringWithFormat:@"%.1fmm",[returnedWeatherData snowFallVolumeOver3HoursInMillimeters]]];
+        [tableViewContents addObject:[NSString stringWithFormat:@"%@",[returnedWeatherData countryCode]]];
         
         [self.tableView reloadData];
         

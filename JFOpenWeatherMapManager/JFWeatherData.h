@@ -3,7 +3,8 @@
 //
 //  Created by Jonathan Field on 27/10/2013
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
-//
+//  http://jonathanfield.me
+//  https://github.com/jfield44/JFOpenWeatherMapManager
 
 #import <Foundation/Foundation.h>
 #import "Main.h"
@@ -14,6 +15,7 @@
 #import "Clouds.h"
 #import "Rain.h"
 #import "Snow.h"
+#import "APTimeZones.h"
 
 @class Main, Wind, Coord, Sys, Clouds, Rain, Snow;
 
@@ -56,5 +58,6 @@ typedef enum windSpeedUnits {kWindSpeedMPS, kWindSpeedMPH, kWindSpeedKPH} WindSp
 - (double)snowFallVolumeOver3HoursInMillimeters; //Amount of Snow Precipitation over next 3 hours in mm
 - (double)latitudeCoordinateOfRequest; //Latitude of Request
 - (double)longitudeCoordinateOfRequest; //Longitude of Request
+- (NSString *)countryCode; // E.g. GB / US / DE
 
 @end
